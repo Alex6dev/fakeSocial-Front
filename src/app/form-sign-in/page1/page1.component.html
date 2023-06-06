@@ -1,0 +1,48 @@
+<p> Etape 1 /3</p>
+
+    
+    <h3>
+        Créer votre compte
+    </h3>
+
+    <form [formGroup]="form" >
+        <div>
+            <label >Nom et Prenom</label>
+            <input type="text" formControlName="nameAndFirstName">
+        </div>
+
+        <div>
+            <label >Email</label>
+            <input type="text" formControlName="email">
+        </div>
+
+        <p>Votre date d'anniversaire</p>
+
+        <div>
+            <label >Mois</label>
+            <select formControlName="dateOfBirthM">
+                <option value=""></option>
+                <option value="01">Janvier</option><option value="02">Février</option>
+                <option value="03">Mars</option><option value="04">Avril</option>
+                <option value="05">Mai</option><option value="06">Juin</option>
+                <option value="07">Juillet</option><option value="08">Aout</option>
+                <option value="09">Septembre</option><option value="10">Octobre</option>
+                <option value="11">Novembre</option><option value="12">Décembre</option>
+            </select>
+        </div>
+        <div>
+            <label >Jour</label>
+            <select formControlName="dateOfBirthD">
+                <option *ngFor="let day of initDateOfBirth.day" [ngValue]="day.numForm">{{day.num}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label >Année</label>
+            <select formControlName="dateOfBirthY">
+                <option *ngFor="let year of initDateOfBirth.year" [ngValue]="year">{{year}}</option>
+            </select>
+        </div>
+
+        <button class="btn btn-dark"  (click)="submitFormPage1()" >Suivant</button>
+    </form>

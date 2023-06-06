@@ -1,0 +1,25 @@
+<div id="boxSmallNew">
+    <h2>Nouveau sur twitter ?</h2>
+    <p>Inscrivez-vous pour profiter de votre fil personnalisé !</p>
+    
+    <button class="btn btn-outline-secondary btn-signIn"><img alt="logo Google" src="../../assets/logoGoogle.png" class="logo" > S'incrire avec Google</button>
+    <button class="btn btn-outline-secondary btn-signIn"><img alt="logo Apple" src="../../assets/logoApple.png"  class="logo"> S'incrire avec Apple</button>
+    <button (click)="changeBoxSignIn()" class="btn btn-outline-secondary btn-signIn"> Créer un compte</button>
+    
+    <p>En vous inscrivant, vous acceptez les Conditions d'utilisation et la Politique de confidentialité, notamment l'Utilisation des cookies.</p>
+</div>
+<nav>
+    <ul>
+        <li><a routerLink="/tos">Conditions d'utilisation</a></li>
+        <li><a routerLink="/privacy">Politique de confidentialité</a></li>
+        <li><a routerLink="/article/2222222">Politique relative aux cookies</a></li>
+        <li><a routerLink="/resources/accessibility">Accessibilité</a></li>
+        <li><a routerLink="/publicités">Informations sur les publicités</a></li>
+    </ul>
+    <p>© 2023 X Corp.</p>
+</nav>
+
+<div *ngIf="boxSignIn" class="position-absolute" id="boxForm">
+    <button class="btn btn-primary" (click)="changeBoxSignIn()">X</button>
+    <app-box-form-sign-in></app-box-form-sign-in>
+</div>

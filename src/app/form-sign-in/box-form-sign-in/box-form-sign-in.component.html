@@ -1,0 +1,9 @@
+<div *ngIf="numPage==1">
+    <app-page1 (sendForm)="sendFormPage1($event)"></app-page1>
+</div>
+<div *ngIf="numPage==2">
+    <app-page2></app-page2>
+</div>
+<div *ngIf="numPage==3">
+    <app-page3></app-page3>
+</div>

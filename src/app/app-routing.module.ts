@@ -1,10 +1,10 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AcceuilPageComponent } from './page/acceuil-page/acceuil-page.component';
+import { HomePageComponent } from './page/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path:"", component:AcceuilPageComponent
+    path:"", component:HomePageComponent
   }
 
 

@@ -1,0 +1,17 @@
+#boxForm{
+    top: 40vh;
+    left: 40vw;
+}
+.logo{
+    width: 30px;
+}
+.btn-signIn{
+    width: 100%;
+    margin-top:1rem;
+    border-radius: 20px;
+}
+#boxSmallNew{
+    padding: 1rem;
+    border-radius: 25px;
+    border: 1px solid rgb(195, 195, 195);
+}
