@@ -11,10 +11,15 @@ export interface FormGroupSignInP1{
     email:FormControl,
     dateOfBirthY:FormControl,
     dateOfBirthM:FormControl,
-    dateOfBirthD:FormControl,
+    dateOfBirthD:FormControl
 }
 
 export interface FormGroupSignInP2{
     email:FormControl,
     codeInEmail:FormControl
+}
+
+export interface FormGroupSignInP3{
+    identifier:FormControl,
+    mdp:FormControl
 }

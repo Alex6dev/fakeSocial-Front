@@ -5,5 +5,5 @@
     <app-page2 [email]="formPage1.controls.email.value" (sendForm)="sendFormPage2($event)"></app-page2>
 </div>
 <div *ngIf="numPage==3">
-    <app-page3></app-page3>
+    <app-page3 [email]="formPage1.controls.email.value" (sendForm)="sendFormPage3($event)" ></app-page3>
 </div>

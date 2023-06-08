@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormGroupSignInP1, FormGroupSignInP2 } from 'src/app/interface/formSignIn';
+import { FormGroupSignInP1, FormGroupSignInP2, FormGroupSignInP3 } from 'src/app/interface/formSignIn';
 import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
@@ -56,6 +56,26 @@ export class BoxFormSignInComponent {
       next:(boolean)=>{
         if(boolean){
           this.nextPage();
+        }else{
+          //erreur
+        }
+      }
+    })
+  }
+
+  sendFormPage3(form:FormGroup<FormGroupSignInP3>){
+    console.log(form);
+    
+    this.authenticationService.sendFormSignInPage3(form).subscribe({
+      next:(boolean)=>{
+        console.log(boolean);
+        
+        if(boolean){
+          
+          this.authenticationService.authentication({
+            identifier:this.formPage1.controls.email.value,
+            mdp:form.controls.mdp.value
+          });
         }else{
           //erreur
         }

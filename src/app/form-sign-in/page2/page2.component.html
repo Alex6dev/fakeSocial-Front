@@ -1,9 +1,10 @@
-<div >
+<p> Etape 2 /3</p>
+
     <h3>Nous vous avons envoyé un code</h3>
     <p>Saisissez-le ci-dessous pour vérifier votre email.</p>
-    <form>
+    <form [formGroup]="form">
         <label > code de vérification:</label>
-        <input type="text" >
+        <input type="text" formControlName="codeInEmail" >
         <button (click)="submitFormPage2()" type="button" class="btn btn-primary">Suivant</button>
     </form>
-</div>
+

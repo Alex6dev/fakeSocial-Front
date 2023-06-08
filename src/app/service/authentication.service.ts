@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { environement } from 'src/environements/environements';
-import { FormGroupSignInP1, FormGroupSignInP2 } from '../interface/formSignIn';
+import { FormGroupSignInP1, FormGroupSignInP2, FormGroupSignInP3 } from '../interface/formSignIn';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormLogin } from '../interface/form-login';
+import { User } from '../interface/user';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +17,27 @@ export class AuthenticationService {
   urlConfirmCode=environement.apiUrl+"/api/confirmCode";
   constructor(
     private http: HttpClient,
+    private userService:UserService
   ) { }
 
-  // authenciationWithAPi(){
-  //   const body= JSON.parse(`{
-  //     "iden":"",
-  //     "mdp":"",
-  //   }`)
-  // }
+  authentication(formLogin:FormLogin){
+    console.log("lancement de l'authentification");
+    
+
+    // const body= JSON.parse(`{
+    //   "identifier":"${formLogin.identifier}",
+    //   "mdp":"${formLogin.mdp}",
+    // }`)
+    // this.http.post<User>(this.urlAuth,body).subscribe({
+    //   next:(user)=>{
+
+    //   },
+    //   error:()=>{
+    //     //todo error à faire
+    //   }
+
+    // });
+  }
 
   sendFormSignInPage1(form:FormGroup<FormGroupSignInP1>):Observable<boolean>{
     
@@ -32,13 +48,21 @@ export class AuthenticationService {
       "email":"${form.controls.email.value}",
       "dateOfBirth":"${stringDateOfBirth}"
     }`)
-    return this.http.post<boolean>(this.urlNewUser,body)
+    return this.http.post<boolean>(this.urlNewUser,body);
   }
   sendFormSignInPage2(form:FormGroup<FormGroupSignInP2>){
     const body=JSON.parse(`{
-      "identifier":"${form}",
-      "code":"${form}",
+      "identifier":"${form.controls.email.value}",
+      "code":"${form.controls.codeInEmail.value}"
     }`)
-    return this.http.post<boolean>(this.urlConfirmCode,body)
+    return this.http.post<boolean>(this.urlConfirmCode,body);
+  }
+
+  sendFormSignInPage3(form:FormGroup<FormGroupSignInP3>){
+    const body=JSON.parse(`{
+      "identifier":"${form.controls.identifier.value}",
+      "mdp":"${form.controls.mdp.value}"
+    }`)
+    return this.http.put<boolean>(this.urlNewUser,body);
   }
 }

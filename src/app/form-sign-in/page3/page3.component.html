@@ -1,1 +1,9 @@
-<p>page3 works!</p>
+<p> Etape 3 /3</p>
+    <h3>Il vous faut un mot de passe</h3>
+    <p>Vérifiez qu'il contient au moins 8 caractères.</p>
+
+    <form [formGroup]="form">
+        <label >Mot de passe: </label>
+        <input type="password" formControlName="mdp">
+        <button class="btn btn-primary" (click)="submitFormPage3()">Suivant</button>
+    </form>
