@@ -1,29 +1,20 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormControlSignInBirth, FormGroupSignIn } from 'src/app/interface/formSignIn';
-import { AuthenticationService } from 'src/app/service/authentication.service';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { FormControlSignInBirth, FormGroupSignInP1 } from 'src/app/interface/formSignIn';
 import { Output, EventEmitter } from '@angular/core';
 
 
 @Component({
-  selector: 'app-page1',
+  selector: 'app-page1 [form]',
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component {
-  form!:FormGroup<FormGroupSignIn>;
+  @Input() form!:FormGroup<FormGroupSignInP1>;
   initDateOfBirth:FormControlSignInBirth  ={month: [],day: [],year: []}
-  @Output() sendForm= new EventEmitter<FormGroup<FormGroupSignIn>>();
+  @Output() sendForm= new EventEmitter<FormGroup<FormGroupSignInP1>>();
 
   ngOnInit(){
-      this.form= new FormGroup({
-        nameAndFirstName: new FormControl(null,[Validators.required, Validators.maxLength(50),Validators.pattern('^[a-zA-Z]{1,}[ ]{1}[a-zA-Z]{1,}$')]),
-        email:new FormControl(null,[Validators.required, Validators.email]),
-        dateOfBirthY:new FormControl(null,[Validators.required,Validators.minLength(4),Validators.maxLength(4),Validators.pattern('[0-9]*')]),
-        dateOfBirthM:new FormControl(null,[Validators.required,Validators.minLength(2),Validators.maxLength(2),Validators.pattern('[0-9]*')]),
-        dateOfBirthD:new FormControl(null,[Validators.required,Validators.minLength(2),Validators.maxLength(2),Validators.pattern('[0-9]*')]),
-      })
-
       //init data birth in variable for form
       let now= new Date();      
       for(let i=0;i<121;i++){
@@ -43,6 +34,5 @@ export class Page1Component {
       this.sendForm.emit(this.form);
     }  
   }
-
 }
 

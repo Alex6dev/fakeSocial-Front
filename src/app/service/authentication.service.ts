@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { environement } from 'src/environements/environements';
-import { FormGroupSignIn } from '../interface/formSignIn';
+import { FormGroupSignInP1, FormGroupSignInP2 } from '../interface/formSignIn';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthenticationService {
   urlAuth= environement.apiUrl+"/api/authentication";
-  urlNewUser=environement.apiUrl+"/api/newAuthInfo"
+  urlNewUser=environement.apiUrl+"/api/newAuthInfo";
+  urlConfirmCode=environement.apiUrl+"/api/confirmCode";
   constructor(
     private http: HttpClient,
   ) { }
@@ -22,7 +23,7 @@ export class AuthenticationService {
   //   }`)
   // }
 
-  sendFormSignInPage1(form:FormGroup<FormGroupSignIn>):Observable<boolean>{
+  sendFormSignInPage1(form:FormGroup<FormGroupSignInP1>):Observable<boolean>{
     
     const stringDateOfBirth:string=form.controls.dateOfBirthY.value+"-"+form.controls.dateOfBirthM.value+"-"+form.controls.dateOfBirthD.value;
     const body=JSON.parse(`{
@@ -31,10 +32,13 @@ export class AuthenticationService {
       "email":"${form.controls.email.value}",
       "dateOfBirth":"${stringDateOfBirth}"
     }`)
-    console.log(body);
     return this.http.post<boolean>(this.urlNewUser,body)
   }
-  sendFormSignInPage2(){
-
+  sendFormSignInPage2(form:FormGroup<FormGroupSignInP2>){
+    const body=JSON.parse(`{
+      "identifier":"${form}",
+      "code":"${form}",
+    }`)
+    return this.http.post<boolean>(this.urlConfirmCode,body)
   }
 }
