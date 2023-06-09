@@ -1,4 +1,11 @@
 export interface User {
-    connect:boolean
-    //TODO: a faire en fonction du retour back
+    id:number,
+    name:string,
+    firstName:string,
+    country:string,
+    city:string,
+    phone:number,
+    email:string,
+    dateOfBirth:string
 }
+

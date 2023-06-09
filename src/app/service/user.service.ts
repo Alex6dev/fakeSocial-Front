@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private currentUser=new BehaviorSubject<User>({connect:false});
+  private currentUser=new BehaviorSubject<User|undefined>(undefined);
   currentUserObs$= this.currentUser.asObservable();
 
   setCurrentUser(user: User):void {

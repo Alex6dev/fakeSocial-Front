@@ -21,22 +21,19 @@ export class AuthenticationService {
   ) { }
 
   authentication(formLogin:FormLogin){
-    console.log("lancement de l'authentification");
-    
+    const body= JSON.parse(`{
+      "identifier":"${formLogin.identifier}",
+      "mdp":"${formLogin.mdp}"
+    }`)
+    this.http.post<User>(this.urlAuth,body).subscribe({
+      next:(user)=>{        
+        this.userService.setCurrentUser(user); 
+      },
+      error:()=>{
+        //todo error à faire
+      }
 
-    // const body= JSON.parse(`{
-    //   "identifier":"${formLogin.identifier}",
-    //   "mdp":"${formLogin.mdp}",
-    // }`)
-    // this.http.post<User>(this.urlAuth,body).subscribe({
-    //   next:(user)=>{
-
-    //   },
-    //   error:()=>{
-    //     //todo error à faire
-    //   }
-
-    // });
+    });
   }
 
   sendFormSignInPage1(form:FormGroup<FormGroupSignInP1>):Observable<boolean>{
