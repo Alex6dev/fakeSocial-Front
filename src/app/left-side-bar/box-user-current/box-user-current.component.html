@@ -1,1 +1,19 @@
-<p>box-user-current works!</p>
+<div *ngIf="displayBox">
+    <ul>
+        <li>
+            <button>Add an existing account</button>
+        </li>
+        <li>
+            <button (click)="logOut()">Log ou @{{userCurrent.firstName}}54845</button>
+        </li>
+    </ul>
+</div>
+<div (click)="setDisplayBox()">
+    <div>
+        <img src="" alt="">
+    </div>
+    <div>
+        <p>{{userCurrent.firstName}} {{userCurrent.name}}</p>
+        <p>@{{userCurrent.firstName}}54845</p>
+    </div>
+</div>

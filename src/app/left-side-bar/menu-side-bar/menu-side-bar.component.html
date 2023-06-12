@@ -18,9 +18,46 @@
     </ul>
     <ul *ngIf="userCurrent">
         <li>
-
+            <a>
+                <button><img src="../../../assets/house-fill.svg" alt="icon home"> Home</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/search.svg" alt="icon magnifying glass"> Explore</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/bell.svg" alt="icon notification"> Notifications</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/envelope.svg" alt="icon message"> Messages</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/card-list.svg" alt="icon list"> Lists</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/bookmark.svg" alt="icon Bookmarks"> Bookmarks</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/patch-check.svg" alt="icon Verified"> Verified</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/bell.svg" alt="icon Profile"> Profile</button>
+            </a>
         </li>
     </ul>
 </nav>
-<app-box-user-current *ngIf="userCurrent"></app-box-user-current>
+<app-box-user-current *ngIf="userCurrent" [userCurrent]="userCurrent"></app-box-user-current>
 
