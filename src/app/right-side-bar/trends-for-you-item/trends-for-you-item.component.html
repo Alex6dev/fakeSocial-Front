@@ -1,0 +1,5 @@
+<li>
+    <p *ngFor="let trend of trendsForYou.categories">{{trend}}</p>
+    <h4>{{trendsForYou.name}}</h4>
+    <p>{{trendsForYou.nbTweets | transformNumberTweets }}</p>
+</li>

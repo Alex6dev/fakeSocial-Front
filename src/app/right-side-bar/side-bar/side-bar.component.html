@@ -4,5 +4,15 @@
 
 <div *ngIf="userCurrent">
 
-    <p>connecter</p>
+    <form action="">
+        <img src="../../../assets/search.svg" alt="icon search">
+        <input type="text" name="" id="" placeholder=" Search Twitter">
+    </form>
+
+    <div>
+        <h3>Trends for you</h3>
+        <ul>
+            <app-trends-for-you-item *ngFor="let trendsForYou of listTrendsForYou" [trendsForYou]="trendsForYou"></app-trends-for-you-item>
+        </ul>
+    </div>
 </div>

@@ -18,6 +18,7 @@ import { FormLoginModule } from './form-login/form-login.module';
     AppComponent,
     HomePageComponent,
     TopBarComponent
+    
   ],
   imports: [
     BrowserModule,
