@@ -1,0 +1,6 @@
+<div *ngIf="currentPage==1">
+    <app-page1 [form]="form" (sendForm)="setFormP1($event)"></app-page1>
+</div>
+<div  *ngIf="currentPage==2">
+    <app-page2 [form]="form" (submitForm)="connect($event)" ></app-page2>
+</div>

@@ -1,1 +1,26 @@
-<p>menu-side-bar works!</p>
+<a>
+    <button>
+        <img src="../../../assets/logoTwitter.png" alt="logo twitter">
+    </button>
+</a>
+<nav>
+    <ul *ngIf="!userCurrent">
+        <li>
+            <a>
+                <button><img src="../../../assets/icon_hashtag.png" alt="icon hastag"> Explorer</button>
+            </a>
+        </li>
+        <li>
+            <a >
+                <button><img src="../../../assets/gear.svg" alt="icon paramètre"> Paramètres</button>
+            </a>
+        </li>
+    </ul>
+    <ul *ngIf="userCurrent">
+        <li>
+
+        </li>
+    </ul>
+</nav>
+<app-box-user-current *ngIf="userCurrent"></app-box-user-current>
+

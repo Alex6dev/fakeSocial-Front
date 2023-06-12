@@ -17,6 +17,7 @@ export class BoxFormSignInComponent {
   ){}
 
   ngOnInit(){
+    
     this.formPage1= new FormGroup({
       nameAndFirstName: new FormControl(null,[Validators.required, Validators.maxLength(50),Validators.pattern('^[a-zA-Z]{1,}[ ]{1}[a-zA-Z]{1,}$')]),
       email:new FormControl(null,[Validators.required, Validators.email]),

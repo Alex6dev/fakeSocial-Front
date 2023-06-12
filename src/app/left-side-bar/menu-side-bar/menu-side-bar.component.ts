@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { User } from 'src/app/interface/user';
 
 @Component({
   selector: 'app-menu-side-bar',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-side-bar.component.css']
 })
 export class MenuSideBarComponent {
+  @Input() userCurrent:User|undefined;
 
 }

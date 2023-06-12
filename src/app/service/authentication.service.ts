@@ -28,6 +28,7 @@ export class AuthenticationService {
     this.http.post<User>(this.urlAuth,body).subscribe({
       next:(user)=>{        
         this.userService.setCurrentUser(user); 
+        this.userService.setUserInSession(formLogin)
       },
       error:()=>{
         //todo error à faire

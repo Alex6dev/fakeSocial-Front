@@ -1,26 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {  User } from '../../interface/user';
-import { UserService } from '../../service/user.service';
-import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-side-bar',
+  selector: 'app-side-bar [userCurrent]',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
-  user:User|undefined=undefined;
-  sub:Subscription=new Subscription;
+  @Input() userCurrent:User|undefined;
 
-  constructor( 
-    private userService:UserService
-  ){}
-
-  ngOnInit(){
-    this.sub=this.userService.currentUserObs$.subscribe((currentUser)=>{
-      this.user=currentUser;
-    })
-  }
-
-  
 }

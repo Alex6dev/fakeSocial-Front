@@ -1,0 +1,15 @@
+<p>Etape 1/2</p>
+<h3>Connectez-vous à Twitter</h3>
+
+<button class="btn btn-outline-secondary btn-signIn"><img alt="logo Google" src="../../assets/logoGoogle.png" class="logo" > S'incrire avec Google</button>
+<button class="btn btn-outline-secondary btn-signIn"><img alt="logo Apple" src="../../assets/logoApple.png"  class="logo"> S'incrire avec Apple</button>
+
+<p>ou</p>
+<form [formGroup]="form">
+    <input type="text" name="" id="" placeholder="Numéro de téléphone, adresse em..." formControlName="identifier">
+    <button (click)="sendPage1()">Suivant</button>
+</form>
+
+<button>Mot de passe oublié ? </button>
+
+<p>Vous n'avez pas de compte ? Inscrivez-vous</p>

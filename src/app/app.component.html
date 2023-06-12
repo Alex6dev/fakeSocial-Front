@@ -1,7 +1,8 @@
 <main class="row d-flex flex-row justify-content-center">
-  <app-menu-side-bar class="col-2"></app-menu-side-bar>
+  <app-menu-side-bar class="col-3" [userCurrent]="userCurrent"></app-menu-side-bar>
   <div class="col-6">
     <router-outlet></router-outlet>
   </div>
-  <app-side-bar class="col-2"></app-side-bar>
+  <app-side-bar class="col-3" [userCurrent]="userCurrent"></app-side-bar>
+  <app-top-bar *ngIf="!userCurrent"></app-top-bar>
 </main>

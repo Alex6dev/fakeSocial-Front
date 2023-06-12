@@ -10,13 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormSignInModule } from './form-sign-in/form-sign-in.module';
 import { LeftSideBarModule } from './left-side-bar/left-side-bar.module';
 import { RightSideBarModule } from './right-side-bar/right-side-bar.module';
-import { FormLoginComponent } from './form-login/form-login.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { FormLoginModule } from './form-login/form-login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    FormLoginComponent
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { FormLoginComponent } from './form-login/form-login.component';
     HttpClientModule,
     FormSignInModule,
     LeftSideBarModule,
-    RightSideBarModule
+    RightSideBarModule,
+    FormLoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
