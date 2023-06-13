@@ -1,1 +1,6 @@
-<p>home-page works!</p>
+<h2>Home</h2>
+<div *ngIf="userCurrent">
+    <app-write-tweet [userCurrent]="userCurrent"></app-write-tweet>
+</div>
+
+<app-wall></app-wall>

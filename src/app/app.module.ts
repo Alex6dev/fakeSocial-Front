@@ -12,12 +12,16 @@ import { LeftSideBarModule } from './left-side-bar/left-side-bar.module';
 import { RightSideBarModule } from './right-side-bar/right-side-bar.module';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormLoginModule } from './form-login/form-login.module';
+import { WallComponent } from './wall/wall.component';
+import { WriteTweetComponent } from './write-tweet/write-tweet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    TopBarComponent
+    TopBarComponent,
+    WallComponent,
+    WriteTweetComponent
     
   ],
   imports: [
