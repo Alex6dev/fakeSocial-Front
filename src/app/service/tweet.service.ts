@@ -10,7 +10,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TweetService {
 
-  urlNewTweet=environement.apiUrl+"/api/newPost"
+  urlNewTweet=environement.apiUrl+"/api/newPost";
+  urlGetTweet=environement.apiUrl+"/api/post";
   
   private tweetInWall= new BehaviorSubject<Tweet[]>([]);
   tweetInWallObs$=this.tweetInWall.asObservable();
@@ -30,24 +31,22 @@ export class TweetService {
       "author":"${form.controls.author.value}"
     }`);
     this.http.post(this.urlNewTweet,body).subscribe({
-      next:(val)=>{
-        console.log(val); 
-        
-        //this.getTweet(form.controls.author.value);  
+      next:(val)=>{        
+        this.getTweet(form.controls.author.value,0);  
       }
     })
   }
   
-  getTweet(idUser:number){
+  getTweet(idUser:number,page:number){
     const body=JSON.parse(`{
-      "user":"${idUser}"
+      "userId":"${idUser}",
+      "pageNext":${page}
     }`);
-    this.http.post<Tweet[]>(this.urlNewTweet,body).subscribe({
-      next:(val)=>{
-        console.log(val);
-        
+    this.http.post<Tweet[]>(this.urlGetTweet,body).subscribe({
+      next:(tweet)=>{
+        console.log(tweet);
+        this.setTweetInWall(this.tweetInWall.value.concat(tweet))
       }
     })
-
   }
 }

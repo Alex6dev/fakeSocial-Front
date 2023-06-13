@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { environement } from 'src/environements/environements';
 import { FormGroupSignInP1, FormGroupSignInP2, FormGroupSignInP3 } from '../interface/formSignIn';
 import { HttpClient } from '@angular/common/http';

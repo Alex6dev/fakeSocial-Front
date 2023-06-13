@@ -1,1 +1,33 @@
-<p>wall works!</p>
+<main>
+    <ul>
+        <li *ngFor="let tweet of listTweet" class="d-flex">
+            <div>
+                <img src="../../assets/person-circle.svg" alt="avatar author">
+            </div>
+            <div class="d-flex flex-column">
+                <div>
+                    <h4>{{tweet.author.firstName}} {{tweet.author.name}}</h4>
+                    <p>{{tweet.postTime}}</p>
+                </div>
+                <div>
+                    <p>{{tweet.content}}</p>
+                    <!-- <img src="" alt="">    futur release from image in tweet -->
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <img src="../../assets/chat.svg" alt="icone comment">
+                        <p>{{tweet.postComment}}</p>
+                    </div>
+                    <div>
+                        <img src="../../assets/heart.svg" alt="icone Heart">
+                        <p>{{tweet.profileLike}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </li>
+    </ul>
+
+
+</main>
