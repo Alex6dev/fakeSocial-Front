@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor( 
     private userService:UserService,
-    private authenticationService:AuthenticationService
+    private authenticationService:AuthenticationService,
   ){}
   
   ngOnInit(){
@@ -29,5 +29,19 @@ export class AppComponent {
     this.sub=this.userService.currentUserObs$.subscribe((currentUser)=>{
       this.userCurrent=currentUser;
     })
+
+    //feature recharge newTweet in bottom page inconclusive
+    // window.addEventListener('scroll',(event)=>{ 
+    //   if((window.scrollY+window.innerHeight)>document.body.clientHeight){
+    //     if(!this.sendRequestGetMoreTweet){
+    //       this.sendRequestGetMoreTweet=!this.sendRequestGetMoreTweet;
+    //       this.pageWall=this.pageWall+1;
+    //       this.sendRequestGetMoreTweet= this.tweetService.getTweet(this.userCurrent!.id,this.pageWall);       
+    //     }
+    //   } 
+    // })
+
+
   }
+
 }

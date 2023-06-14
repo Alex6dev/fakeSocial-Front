@@ -11,6 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 export class TweetService {
 
   urlNewTweet=environement.apiUrl+"/api/newPost";
+  urlNewTweetAndImage=environement.apiUrl+"/api/newPost/image";
   urlGetTweet=environement.apiUrl+"/api/post";
   
   private tweetInWall= new BehaviorSubject<Tweet[]>([]);
@@ -24,14 +25,31 @@ export class TweetService {
   setTweetInWall(tweet:Tweet[]){
     this.tweetInWall.next(tweet);
   }
-
+  clearTweetInTweet(){
+    this.tweetInWall.next([]);
+  }
   sendTweetInAPI(form: FormGroup<NewTweet>){
     const body=JSON.parse(`{
       "content":"${form.controls.content.value}",
       "author":"${form.controls.author.value}"
     }`);
     this.http.post(this.urlNewTweet,body).subscribe({
-      next:(val)=>{        
+      next:()=>{    
+        this.clearTweetInTweet();    
+        this.getTweet(form.controls.author.value,0);  
+      }
+    })
+  }
+
+  sendTweetAndImageInAPI(img:string|ArrayBuffer,form: FormGroup<NewTweet>){
+    const body=JSON.parse(`{
+      "content":"${form.controls.content.value}",
+      "author":"${form.controls.author.value}",
+      "image":"${img}"
+    }`);
+    this.http.post(this.urlNewTweetAndImage,body).subscribe({
+      next:()=>{    
+        this.clearTweetInTweet();    
         this.getTweet(form.controls.author.value,0);  
       }
     })
@@ -44,7 +62,6 @@ export class TweetService {
     }`);
     this.http.post<Tweet[]>(this.urlGetTweet,body).subscribe({
       next:(tweet)=>{
-        console.log(tweet);
         this.setTweetInWall(this.tweetInWall.value.concat(tweet))
       }
     })

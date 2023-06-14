@@ -65,11 +65,9 @@ export class BoxFormSignInComponent {
   }
 
   sendFormPage3(form:FormGroup<FormGroupSignInP3>){
-    console.log(form);
     
     this.authenticationService.sendFormSignInPage3(form).subscribe({
       next:(boolean)=>{
-        console.log(boolean);
         
         if(boolean){
           

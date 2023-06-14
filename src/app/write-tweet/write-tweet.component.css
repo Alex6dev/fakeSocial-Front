@@ -1,0 +1,15 @@
+.iconePicture_box{
+    position: relative;
+    width: 40px;
+    padding: 0;
+}
+
+.iconePicture_img{
+    position: absolute;
+    width: 90%;
+    top: 0;
+}
+#iconePicture_input{
+    opacity: 0;
+    width: 100%;
+}

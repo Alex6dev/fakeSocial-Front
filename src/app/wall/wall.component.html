@@ -1,5 +1,5 @@
 <main>
-    <ul>
+    <ul >
         <li *ngFor="let tweet of listTweet" class="d-flex">
             <div>
                 <img src="../../assets/person-circle.svg" alt="avatar author">
@@ -24,10 +24,11 @@
                     </div>
                 </div>
             </div>
-
-
         </li>
     </ul>
+    <div>
+        <button (click)="moreTweet()">Plus de contenu</button>
+    </div>
 
 
 </main>

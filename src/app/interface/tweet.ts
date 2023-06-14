@@ -12,6 +12,6 @@ export interface Tweet {
 
 export interface NewTweet{
     content:FormControl,
-    author:FormControl
+    author:FormControl,
 }
 
