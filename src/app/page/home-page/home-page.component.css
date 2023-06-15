@@ -1,0 +1,5 @@
+.titrePage{
+    width:48%;
+    height: 50px;
+    backdrop-filter: blur(10px);
+}

@@ -1,9 +1,19 @@
-
+#menu-bar{
+    left: 0;
+}
+#side-bar{
+    right: 0;
+}
 
 .posAside{
     position: fixed;
     bottom: 0;
     background-color: var(--color-blue) ;
     padding: 1rem 0 ;
+}
+.borderPage{
+    border-left: solid red;
+    border-right: solid red;
+    
 }
 

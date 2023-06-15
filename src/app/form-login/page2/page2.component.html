@@ -1,13 +1,17 @@
-<p>Etape 2/2</p>
-<h3>Connectez-vous à Twitter</h3>
-
-
-<form [formGroup]="form">
-    <label >Votre mot de passe</label>
-    <input type="password" name="" id="" formControlName="mdp">
-    <button (click)="submitFormP2()">Se connecter</button>
-</form>
-
-<button>Mot de passe oublié ? </button>
-
-<p>Vous n'avez pas de compte ? Inscrivez-vous</p>
+<div class="d-flex flex-column justify-content-around h-100">
+    <form [formGroup]="form" class="d-flex flex-column justify-content-around h-50">
+        <div>
+            <label >Email</label>
+            <input type="text"  name="" id="" formControlName="identifier" class="inputForm">
+        </div>
+        <div>
+            <label >Votre mot de passe</label>
+            <input type="password" name="" id="" formControlName="mdp"  class="inputForm">
+        </div>
+        <button (click)="submitFormP2()" class="btn-login btn-blue">Se connecter</button>
+    </form>
+    
+    <button class="btn-login btn-black">Mot de passe oublié ? </button>
+    
+    <p>Vous n'avez pas de compte ? Inscrivez-vous</p>
+</div>

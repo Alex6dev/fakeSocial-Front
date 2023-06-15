@@ -1,16 +1,19 @@
-<div class="d-flex flex-column justify-content-around h-100">
+<div class="d-flex flex-column justify-content-around h-100" id="mawHeight">
     <h2 >Connectez-vous à Twitter</h2>
     
-    <button class="btn btn-outline-secondary btn-signIn"><img alt="logo Google" src="../../assets/logoGoogle.png" class="logo" > S'incrire avec Google</button>
-    <button class="btn btn-outline-secondary btn-signIn"><img alt="logo Apple" src="../../assets/logoApple.png"  class="logo"> S'incrire avec Apple</button>
-    
-    <p>ou</p>
+    <button class="btn-login btn-connect-with"><img alt="logo Google" src="../../assets/logoGoogle.png" class="logoInForm" > Se connecter avec Google</button>
+    <button class="btn-login btn-connect-with"><img alt="logo Apple" src="../../assets/logoApple.png"  class="logoInForm"> Se connecter Apple</button>
+    <div class="position-relative">
+        <hr>
+        <p id="ou">ou</p>
+
+    </div>
     <form [formGroup]="form">
-        <input type="text" name="" id="" placeholder="Numéro de téléphone, adresse em..." formControlName="identifier">
-        <button (click)="sendPage1()">Suivant</button>
+        <input type="text" name="" placeholder="Numéro de téléphone, adresse email" formControlName="identifier" id="inputEmail">
     </form>
+    <button (click)="sendPage1()" class="btn-login btn-black">Suivant</button>
     
-    <button>Mot de passe oublié ? </button>
+    <button class="btn-login btn-connect-with">Mot de passe oublié ? </button>
     
     <p>Vous n'avez pas de compte ? Inscrivez-vous</p>
 </div>

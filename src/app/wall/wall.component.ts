@@ -33,8 +33,18 @@ export class WallComponent {
       }
     })
   }
-  moreTweet(){    
+  ngAfterViewInit(){
+    this.moreTweet();
+  }
+
+  moreTweet(){     
+    
     this.pageWall=this.pageWall+1;
-    this.tweetService.getTweet(this.userCurrent!.id,this.pageWall);       
+
+    if(this.userCurrent){
+      this.tweetService.getTweet(this.userCurrent!.id,this.pageWall);       
+    }else{
+      this.tweetService.getTweet(0,this.pageWall);       
+    }
   }
 }

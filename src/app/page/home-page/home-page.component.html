@@ -1,6 +1,5 @@
-<h2>Home</h2>
-<div *ngIf="userCurrent">
-    <app-write-tweet [userCurrent]="userCurrent"></app-write-tweet>
-</div>
+
+<h2 class="titrePage fixed">Home</h2>
+<app-write-tweet [userCurrent]="userCurrent" *ngIf="userCurrent" ></app-write-tweet>
 
 <app-wall></app-wall>

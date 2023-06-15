@@ -12,3 +12,6 @@ p{
 :root{
     --color-blue:rgb(29, 155, 240) ;
 }
+.fixed{
+    position: fixed;
+}

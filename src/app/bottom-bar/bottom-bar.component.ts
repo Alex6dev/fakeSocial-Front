@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class BottomBarComponent {
   
-  displayBox:{display:boolean,signIn:boolean,login:boolean}={display:true, signIn:false,login:true};
+  displayBox:{display:boolean,signIn:boolean,login:boolean}={display:false, signIn:false,login:false};
 
 
   setDisplayBox(choix : "signIn"|"login"){

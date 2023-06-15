@@ -11,6 +11,9 @@ export class Page2Component {
   @Input() form!:FormGroup<FormGroupSignInP3>;
   @Output() submitForm= new EventEmitter<FormGroup<FormGroupSignInP3>>; 
 
+  ngOnInit(){
+    this.form.controls['identifier'].disable();
+  }
   submitFormP2(){
     if(this.form.valid){
       this.submitForm.emit(this.form);
