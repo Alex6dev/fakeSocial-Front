@@ -1,0 +1,9 @@
+
+
+.posAside{
+    position: fixed;
+    bottom: 0;
+    background-color: var(--color-blue) ;
+    padding: 1rem 0 ;
+}
+

@@ -42,6 +42,8 @@ export class TweetService {
   }
 
   sendTweetAndImageInAPI(img:string|ArrayBuffer,form: FormGroup<NewTweet>){
+    console.log(img);
+    
     const body=JSON.parse(`{
       "content":"${form.controls.content.value}",
       "author":"${form.controls.author.value}",
@@ -62,6 +64,8 @@ export class TweetService {
     }`);
     this.http.post<Tweet[]>(this.urlGetTweet,body).subscribe({
       next:(tweet)=>{
+        console.log(tweet);
+        
         this.setTweetInWall(this.tweetInWall.value.concat(tweet))
       }
     })

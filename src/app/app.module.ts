@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormSignInModule } from './form-sign-in/form-sign-in.module';
 import { LeftSideBarModule } from './left-side-bar/left-side-bar.module';
 import { RightSideBarModule } from './right-side-bar/right-side-bar.module';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { FormLoginModule } from './form-login/form-login.module';
 import { WallComponent } from './wall/wall.component';
 import { WriteTweetComponent } from './write-tweet/write-tweet.component';
@@ -19,7 +19,7 @@ import { WriteTweetComponent } from './write-tweet/write-tweet.component';
   declarations: [
     AppComponent,
     HomePageComponent,
-    TopBarComponent,
+    BottomBarComponent,
     WallComponent,
     WriteTweetComponent
     

@@ -7,7 +7,8 @@ export interface Tweet {
     author:UserSimple,
     profileLike:number,
     postComment:number,
-    postTime:string
+    postTime:string,
+    image:string
 }
 
 export interface NewTweet{

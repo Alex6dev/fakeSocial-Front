@@ -6,7 +6,9 @@ a{
 li{
     list-style: none;
 }
-li:hover{
-    text-decoration: underline;
-
+p{
+    margin: 0;
+} 
+:root{
+    --color-blue:rgb(29, 155, 240) ;
 }
