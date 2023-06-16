@@ -1,8 +1,8 @@
 #menu-bar{
-    left: 0;
+    right: 77%;
 }
 #side-bar{
-    right: 0;
+    left: 68%;
 }
 
 .posAside{
@@ -12,8 +12,10 @@
     padding: 1rem 0 ;
 }
 .borderPage{
-    border-left: solid red;
-    border-right: solid red;
-    
+    left: 25%;
+    border-left:1px solid rgb(233, 233, 233);
+    border-right:1px  solid rgb(233, 233, 233);
+    min-height: 100vh;
+    padding: 0;
 }
 

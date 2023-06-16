@@ -1,32 +1,32 @@
-<main class=" mt-5">
+<main class="mt-5">
     <ul >
-        <li *ngFor="let tweet of listTweet" class="d-flex">
+        <li *ngFor="let tweet of listTweet" class="d-flex cardTweet">
             <div>
-                <img src="../../assets/person-circle.svg" alt="avatar author">
+                <img src="../../assets/person-circle.svg" alt="avatar author" class="avatarTweet">
             </div>
             <div class="d-flex flex-column">
-                <div>
-                    <h4>{{tweet.author.firstName}} {{tweet.author.name}}</h4>
-                    <p>{{tweet.postTime}}</p>
+                <div class="d-flex flex-row align-items-end">
+                    <h4>{{tweet.author.firstName| titlecase}} {{tweet.author.name | titlecase}}</h4>
+                    <p class="ms-2">{{tweet.postTime | dateEdit}}</p>
                 </div>
                 <div>
-                    <p>{{tweet.content}}</p>
-                    <img [src]="tweet.image" alt=""> 
+                    <p class="textContentTweet">{{tweet.content}}</p>
+                    <img [src]="tweet.image" alt="" class="imgContentTweet"> 
                 </div>
                 <div class="d-flex">
-                    <div>
-                        <img src="../../assets/chat.svg" alt="icone comment">
+                    <button class="d-flex btnBottomTweet">
+                        <img src="../../assets/chat.svg" alt="icone comment" class="iconeBottomTweet">
                         <p>{{tweet.postComment}}</p>
-                    </div>
-                    <div>
-                        <img src="../../assets/heart.svg" alt="icone Heart">
+                    </button>
+                    <button class="d-flex btnBottomTweet">
+                        <img src="../../assets/heart.svg" alt="icone Heart" class="iconeBottomTweet">
                         <p>{{tweet.profileLike}}</p>
-                    </div>
+                    </button>
                 </div>
             </div>
         </li>
     </ul>
-    <div>
+    <div class="d-flex justify-content-center">
         <button (click)="moreTweet()" id="moreTweet">Plus de contenu</button>
     </div>
 

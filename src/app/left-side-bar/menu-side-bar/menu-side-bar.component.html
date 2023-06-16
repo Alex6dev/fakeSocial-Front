@@ -1,13 +1,13 @@
 <a>
     <button>
-        <img src="../../../assets/logoTwitter.png" alt="logo twitter">
+        <img src="../../../assets/logoTwitter.png" alt="logo twitter" id="menuSideBarLogoTwitter">
     </button>
 </a>
-<nav>
-    <ul *ngIf="!userCurrent">
+<nav id="listLienLeftBar">
+    <ul *ngIf="!userCurrent" >
         <li>
             <a>
-                <button><img src="../../../assets/icon_hashtag.png" alt="icon hastag"> Explorer</button>
+                <button><img src="../../../assets/search.svg" alt="icon hastag"> Explorer</button>
             </a>
         </li>
         <li>

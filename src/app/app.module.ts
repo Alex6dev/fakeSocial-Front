@@ -14,6 +14,7 @@ import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
 import { FormLoginModule } from './form-login/form-login.module';
 import { WallComponent } from './wall/wall.component';
 import { WriteTweetComponent } from './write-tweet/write-tweet.component';
+import { DateEditPipe } from './pipe/date-edit.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WriteTweetComponent } from './write-tweet/write-tweet.component';
     HomePageComponent,
     BottomBarComponent,
     WallComponent,
-    WriteTweetComponent
+    WriteTweetComponent,
+    DateEditPipe
     
   ],
   imports: [
