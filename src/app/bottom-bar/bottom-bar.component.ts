@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DisplayForm } from '../interface/display-form';
 
 @Component({
   selector: 'app-bottom-bar',
@@ -7,15 +8,16 @@ import { Component } from '@angular/core';
 })
 export class BottomBarComponent {
   
-  displayBox:{display:boolean,signIn:boolean,login:boolean}={display:false, signIn:false,login:false};
-
+  @Input() displayBox!:DisplayForm;
+  @Output() emitForm=new EventEmitter<DisplayForm>();
 
   setDisplayBox(choix : "signIn"|"login"){
     this.displayBox.display=!this.displayBox.display;
     if(choix=="login"){
       this.displayBox.login=!this.displayBox.login; 
-    }else if(choix=="signIn"){      
+    }else{      
       this.displayBox.signIn=!this.displayBox.signIn;
     }
+    this.emitForm.emit(this.displayBox);
   }
 }
