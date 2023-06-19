@@ -2,12 +2,13 @@
     <app-side-bar-nex-in-twitter (sendOpenForm)="setDisplayBox($event)"></app-side-bar-nex-in-twitter>
 </div>
 
-<div *ngIf="userCurrent">
-
-    <form action="">
-        <img src="../../../assets/search.svg" alt="icon search">
-        <input type="text" name="" id="" placeholder=" Search Twitter">
-    </form>
+<div *ngIf="userCurrent" id="rightBarConnect">
+    <div>
+        <form action="">
+            <img src="../../../assets/search.svg" alt="icon search">
+            <input type="text" name="" id="" placeholder=" Search Twitter">
+        </form>
+    </div>
 
     <div>
         <h3>Trends for you</h3>

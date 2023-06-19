@@ -1,4 +1,4 @@
-<div *ngIf="displayBox">
+<div *ngIf="displayBox" id="boxLogOut">
     <ul>
         <li>
             <button>Add an existing account</button>
@@ -8,9 +8,9 @@
         </li>
     </ul>
 </div>
-<div (click)="setDisplayBox()">
-    <div>
-        <img src="" alt="">
+<div (click)="setDisplayBox()" class="d-flex">
+    <div class="me-3">
+        <img src="../../../assets/person-circle.svg" alt="avatar profile">
     </div>
     <div>
         <p>{{userCurrent.firstName}} {{userCurrent.name}}</p>

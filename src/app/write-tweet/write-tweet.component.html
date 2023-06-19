@@ -1,14 +1,14 @@
-<div class="d-flex flex-column">
-    <div class="d-flex flex-row">
+<div class="d-flex flex-column mb-3">
+    <div class="d-flex flex-row justify-content-around mb-2">
         <h4>For you</h4>
         <h4>Following</h4>
     </div>
     <form [formGroup]="form">
         <div>
             <img src="../../assets/person-circle.svg" alt="avatar">
-            <input type="text" formControlName="content" placeholder="What is happening ?">
+            <textarea type="text" formControlName="content" placeholder="What is happening ?" class="w-75 ms-2"></textarea>
         </div>
-        <div class=" d-flex flex-row ">
+        <div class=" d-flex flex-row justify-content-around">
             <div>
                 <button class="iconePicture_box"><img src="../../assets/picture.svg" alt="icone picture" class="iconePicture_img"><input type="file" accept="image/png,image/jpg"  id="iconePicture_input"></button>
                 <button><img src="../../assets/filetype-gif.svg" alt="icone GIF"></button>
@@ -17,7 +17,7 @@
                 <button><img src="../../assets/calendar-check.svg" alt="icone calendar"></button>
                 <button><img src="../../assets/geo-alt.svg" alt="icone map"></button>
             </div>
-            <button (click)="sendTweet()">Tweet</button>
+            <button (click)="sendTweet()" id="sendTweet">Tweet</button>
         
         </div>
     </form>

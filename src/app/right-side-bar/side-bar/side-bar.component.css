@@ -1,0 +1,10 @@
+#rightBarConnect div{
+    background-color: rgba(226, 226, 226, 0.356);
+    border-radius: 25px;
+    padding:0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+#rightBarConnect input{
+    border: none;
+    background-color: rgba(187, 187, 187, 0);
+}
