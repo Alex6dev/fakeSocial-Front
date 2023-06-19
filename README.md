@@ -1,5 +1,5 @@
 # fakeSocial-Front
-[lien vers le Ripo Banckend du projet](https://github.com/Alex6dev/fakeSocial-Back)
+[lien vers le Repo Banckend du projet](https://github.com/Alex6dev/fakeSocial-Back)
 ## 1. Introduction
 
 C'est un projet réalisé lors d'une intermission (projet d'entrenement). il a pour but de reproduire a faible niveau le site web de Twitter. Sans avoir la prétention de le reproduire parfaitement. Un projet Angular/Java Spring Boot.
