@@ -1,10 +1,12 @@
-<p> Etape 2 /3</p>
-
-    <h3>Nous vous avons envoyé un code</h3>
-    <p>Saisissez-le ci-dessous pour vérifier votre email.</p>
-    <form [formGroup]="form">
-        <label > code de vérification:</label>
-        <input type="text" formControlName="codeInEmail" >
-        <button (click)="submitFormPage2()" type="button" class="btn btn-primary">Suivant</button>
-    </form>
+<div id="page2">
+    <p > Etape 2 /3</p>
+    
+        <h3 class="mt-5">Nous vous avons envoyé un code</h3>
+        <p class="mt-2"> Saisissez-le ci-dessous pour vérifier votre email.</p>
+        <form [formGroup]="form" class="d-flex flex-column">
+            <label class="mt-5"> code de vérification:</label>
+            <input type="text" formControlName="codeInEmail" class="btnRadiusSmall" >
+        </form>
+        <button (click)="submitFormPage2()" type="button" class="btn btn-dark mt-5 w-100" [disabled]="form.invalid">Suivant</button>
+</div>
 

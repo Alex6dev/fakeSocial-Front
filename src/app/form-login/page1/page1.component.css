@@ -22,11 +22,9 @@
     max-height: 600px;
 }
 #inputEmail{
-    height: 50px;
     width: 100%;
     padding: 0 10px;
-    border-radius: 5px;
-    border: 1px solid ;
+
 }
 .btn-black{
     background-color: black;

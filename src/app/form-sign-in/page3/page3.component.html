@@ -1,9 +1,9 @@
 <p> Etape 3 /3</p>
-    <h3>Il vous faut un mot de passe</h3>
-    <p>Vérifiez qu'il contient au moins 8 caractères.</p>
+    <h3 class="mt-5">Il vous faut un mot de passe</h3>
+    <p class="mt-2">Vérifiez qu'il contient au moins 8 caractères.</p>
 
-    <form [formGroup]="form">
-        <label >Mot de passe: </label>
-        <input type="password" formControlName="mdp">
-        <button class="btn btn-primary" (click)="submitFormPage3()">Suivant</button>
+    <form [formGroup]="form" class="d-flex flex-column">
+        <label class="mt-5">Mot de passe: </label>
+        <input type="password" formControlName="mdp" class="btnRadiusSmall">
+        <button (click)="submitFormPage3()" class="btn btn-dark mt-5 w-100" [disabled]="form.invalid">Suivant</button>
     </form>

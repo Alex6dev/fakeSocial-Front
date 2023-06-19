@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormGroupSignInP1, FormGroupSignInP2, FormGroupSignInP3 } from 'src/app/interface/formSignIn';
 import { AuthenticationService } from 'src/app/service/authentication.service';
@@ -12,6 +12,9 @@ export class BoxFormSignInComponent {
   numPage=1
   formPage1!:FormGroup<FormGroupSignInP1>;
   fromPage2!:FormGroup<FormGroupSignInP2>;
+  @Output() closeForm= new EventEmitter<"signIn">();
+
+
   constructor(
     private authenticationService:AuthenticationService
   ){}
@@ -75,6 +78,7 @@ export class BoxFormSignInComponent {
             identifier:this.formPage1.controls.email.value,
             mdp:form.controls.mdp.value
           });
+          this.closeForm.emit("signIn");
         }else{
           //erreur
         }

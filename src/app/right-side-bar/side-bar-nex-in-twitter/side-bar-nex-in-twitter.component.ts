@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar-nex-in-twitter',
@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-bar-nex-in-twitter.component.css']
 })
 export class SideBarNexInTwitterComponent {
-  boxSignIn=false;
+  @Output() sendOpenForm=new EventEmitter<"signIn">();
   changeBoxSignIn(){
-    this.boxSignIn=!this.boxSignIn;
+    this.sendOpenForm.emit("signIn");
   }
 }

@@ -3,7 +3,7 @@
   <div class="col-5 borderPage position-relative">
     <router-outlet></router-outlet>
   </div>
-  <app-side-bar class="col-3 fixed" [userCurrent]="userCurrent" id="side-bar"></app-side-bar>
+  <app-side-bar class="col-3 fixed" [userCurrent]="userCurrent" id="side-bar" (sendFormDisplay)="setDisplayBox($event)"></app-side-bar>
   <app-bottom-bar [displayBox]="displayBoxApp" (emitForm)="changeDisplayBox($event)" *ngIf="!userCurrent" class="posAside"  ></app-bottom-bar>
 
   <div class="background_boxForm" *ngIf="displayBoxApp.display">
@@ -14,13 +14,13 @@
                 </path>
             </g>
         </svg>
-        <div *ngIf="displayBoxApp.signIn" class="h-100 d-flex justify-content-center ">
+        <div *ngIf="displayBoxApp.signIn" class="h-100 d-flex justify-content-center w-100">
             <button class="btn-close" (click)="setDisplayBox('signIn')"></button>
-            <app-box-form-sign-in class="formPage"></app-box-form-sign-in>
+            <app-box-form-sign-in class="w-100" (closeForm)="setDisplayBox($event)"></app-box-form-sign-in>
         </div>
         <div *ngIf="displayBoxApp.login" class="h-100 d-flex justify-content-center ">
             <button class="btn-close" (click)="setDisplayBox('login')"></button>
-            <app-form-login class="formPage"></app-form-login> 
+            <app-form-login class="formPage" (closeForm)="setDisplayBox($event)"></app-form-login> 
         </div>
 
     </div>

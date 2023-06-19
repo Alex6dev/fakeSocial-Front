@@ -1,5 +1,5 @@
 <div *ngIf="userCurrent==undefined">
-    <app-side-bar-nex-in-twitter></app-side-bar-nex-in-twitter>
+    <app-side-bar-nex-in-twitter (sendOpenForm)="setDisplayBox($event)"></app-side-bar-nex-in-twitter>
 </div>
 
 <div *ngIf="userCurrent">

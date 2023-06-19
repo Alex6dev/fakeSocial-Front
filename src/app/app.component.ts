@@ -20,8 +20,6 @@ export class AppComponent {
     login:false
   };
 
-
-
   constructor( 
     private userService:UserService,
     private authenticationService:AuthenticationService,

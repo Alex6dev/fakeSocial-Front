@@ -1,9 +1,11 @@
-<div *ngIf="numPage==1">
-    <app-page1 [form]="formPage1" (sendForm)="sendFormPage1($event)"></app-page1>
-</div>
-<div *ngIf="numPage==2">
-    <app-page2 [email]="formPage1.controls.email.value" (sendForm)="sendFormPage2($event)"></app-page2>
-</div>
-<div *ngIf="numPage==3">
-    <app-page3 [email]="formPage1.controls.email.value" (sendForm)="sendFormPage3($event)" ></app-page3>
+<div id="boxFormSignIn">
+    <div *ngIf="numPage==1" class="h-100">
+        <app-page1 [form]="formPage1" (sendForm)="sendFormPage1($event)"  ></app-page1>
+    </div>
+    <div *ngIf="numPage==2">
+        <app-page2 [email]="formPage1.controls.email.value" (sendForm)="sendFormPage2($event)" ></app-page2>
+    </div>
+    <div *ngIf="numPage==3">
+        <app-page3 [email]="formPage1.controls.email.value" (sendForm)="sendFormPage3($event)"  ></app-page3>
+    </div>
 </div>

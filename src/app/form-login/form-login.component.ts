@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormGroupSignInP3 } from '../interface/formSignIn';
 import { AuthenticationService } from '../service/authentication.service';
@@ -14,6 +14,7 @@ import { AuthenticationService } from '../service/authentication.service';
 export class FormLoginComponent {
   currentPage:number=1;
   form!:FormGroup<FormGroupSignInP3>;
+  @Output() closeForm= new EventEmitter<"login">();
   
   constructor(
     private authenticationService:AuthenticationService
@@ -36,6 +37,7 @@ export class FormLoginComponent {
     this.authenticationService.authentication({
       identifier:form.controls.identifier.value,
       mdp:form.controls.mdp.value
-    })
+    });
+    this.closeForm.emit('login');
   }
 }

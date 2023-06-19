@@ -26,3 +26,20 @@ button{
     background-color: white;
     border: 0;
 }
+.boxLabelInput{
+    display: flex;
+    flex-direction: column;
+}
+.boxLabelSelect{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputStyle{
+    border-radius: 5px;
+    border: 1px solid ;
+    height: 50px;
+}
+.btnRadiusSmall{
+    border-radius: 5px;
+}

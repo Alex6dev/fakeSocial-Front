@@ -30,6 +30,8 @@ export class Page1Component {
   }
 
   submitFormPage1(){
+    console.log(this.form);
+    
     if(this.form.valid){
       this.sendForm.emit(this.form);
     }  

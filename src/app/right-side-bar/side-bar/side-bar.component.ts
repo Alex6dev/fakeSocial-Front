@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {  User } from '../../interface/user';
 import { TrendsForYou } from 'src/app/interface/trends-for-you';
 
@@ -33,4 +33,9 @@ const fakeData:TrendsForYou[]=[
 export class SideBarComponent {
   @Input() userCurrent:User|undefined;
   listTrendsForYou:TrendsForYou[]=fakeData;
+  @Output() sendFormDisplay=new EventEmitter<"signIn">();
+
+  setDisplayBox(event:"signIn"){
+    this.sendFormDisplay.emit(event);
+  }
 }
